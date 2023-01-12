@@ -25,9 +25,9 @@ def email_alert(subject, body, to, file):
         #print("File name is", file_name)
         msg.add_attachment(file_data, maintype="application", subtype = "jpg", filename = file_name)
 
-    user = "pythonalertsys@gmail.com"
+    user = "user@gmail.com"
     msg['from'] = user
-    password = "glsjcesbuclxrala"
+    password = "password"
 
     server = smtplib.SMTP("smtp.gmail.com", 587)
     server.starttls()
@@ -116,7 +116,7 @@ while True:
         break
 
 email_alert(f"Alert", f"Someone has entered your room! Attached below is: {str(file_name)}, which contains the footage."
-,"itzmemahad@gmail.com", file_name)
+,"gmail", file_name)
 out.release()
 cap.release()
 cv2.destroyAllWindows
